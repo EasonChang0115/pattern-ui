@@ -1,0 +1,163 @@
+$button-radius: 0.25rem;
+$button-radius-round: 20px;
+$button-radius-circle: 50%;
+$disabled-opacity: 0.4;
+
+@mixin typeBGAndBC($color) {
+  color: $white;
+  background-color: $color;
+  border-color: $color;
+}
+
+@mixin hoverTransition($color, $degree) {
+  background-color: rgba($color, $degree);
+  border-color: rgba($color, $degree);
+}
+
+@mixin typeBGAndBCPlain($color) {
+  color: $color;
+  background-color: rgba($color, 0.15);
+  border-color: rgba($color, 0.15);
+}
+
+.pg-button {
+  @include flexCenter();
+  appearance: none;
+  outline: none;
+  flex-wrap: nowrap;
+  background-color: $white;
+  border: 1px solid $teal;
+  font-size: 1rem;
+  font-weight: $font-weight-normal;
+  color: $font-color;
+  text-align: center;
+  padding: 11px 20px;
+  margin: 0;
+  border-radius: $button-radius;
+  user-select: none;
+  cursor: pointer;
+  transition: .3s;
+  span {
+    @include flexCenter();
+  }
+  i.loading {
+    width: 20px;
+    height: 16px;
+    margin-right: 5px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  [class*=#{$variable-prefix}icon-]+span {
+    margin-left: 5px;
+  }
+  &:hover {
+    @include hoverTransition($teal, 0.2);
+  }
+  &.is-loading {
+    cursor: not-allowed;
+    opacity: $disabled-opacity;
+  }
+  &.is-round {
+    border-radius: $button-radius-round;
+  }
+  &.is-disabled {
+    cursor: not-allowed;
+    opacity: $disabled-opacity;
+  }
+  &.is-plain {
+    &:hover {
+      background-color: $white;
+      color: $primary;
+      border-color: $primary;
+    }
+  }
+  &.is-circle {
+    padding: 12px;
+    border-radius: $button-radius-circle;
+  }
+  &--medium {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 4px;
+  }
+  &--small {
+    padding: 9px 15px;
+    font-size: 12px;
+    border-radius: 3px;
+  }
+  &--mini {
+    padding: 7px 12px;
+    font-size: 12px;
+    border-radius: 3px;
+  }
+  &--primary {
+    @include typeBGAndBC($primary);
+    &:hover {
+      @include hoverTransition($primary, 0.8);
+    }
+    &.is-plain {
+      @include typeBGAndBCPlain($primary);
+      &:hover {
+        @include typeBGAndBC($primary);
+      }
+    }
+  }
+  &--success {
+    @include typeBGAndBC($success);
+    &:hover {
+      @include hoverTransition($success, 0.8);
+    }
+    &.is-plain {
+      @include typeBGAndBCPlain($success);
+      &:hover {
+        @include typeBGAndBC($success);
+      }
+    }
+  }
+  &--warning {
+    @include typeBGAndBC($warning);
+    &:hover {
+      @include hoverTransition($warning, 0.8);
+    }
+    &.is-plain {
+      @include typeBGAndBCPlain($warning);
+      &:hover {
+        @include typeBGAndBC($warning);
+      }
+    }
+  }
+  &--info {
+    @include typeBGAndBC($secondary);
+    &:hover {
+      @include hoverTransition($secondary, 0.8);
+    }
+    &.is-plain {
+      @include typeBGAndBCPlain($secondary);
+      &:hover {
+        @include typeBGAndBC($secondary);
+      }
+    }
+  }
+  &--danger {
+    @include typeBGAndBC($danger);
+    &:hover {
+      @include hoverTransition($danger, 0.8);
+    }
+    &.is-plain {
+      @include typeBGAndBCPlain($danger);
+      &:hover {
+        @include typeBGAndBC($danger);
+      }
+    }
+  }
+  &--text {
+    background-color: transparent;
+    border: none;
+    color: $purple;
+    &:hover {
+      color: $primary;
+      background-color: transparent;
+    }
+  }
+}

@@ -1,0 +1,187 @@
+@mixin scrollbarStyle() {
+  &::-webkit-scrollbar {
+    z-index: 11;
+    width: 6px;
+  }
+  &::-webkit-scrollbar-corner,
+  &::-webkit-scrollbar-track {
+    background-color: $white;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    width: 6px;
+    background-color: $gray-500;
+  }
+  &::-webkit-scrollbar-track-piece {
+    background-color: $white;
+    width: 6px;
+  }
+}
+
+.pg-input,
+.pg-textarea {
+  position: relative;
+  font-size: 1rem;
+  width: 100%;
+  @include scrollbarStyle();
+  @include flexCenter();
+  &--medium > .pg-input__inner {
+    height: map-get($input-heights, medium);
+    line-height: map-get($input-heights, medium);
+  }
+  &--small > .pg-input__inner {
+    height: map-get($input-heights, small);
+    line-height: map-get($input-heights, small);
+  }
+  &--mini > .pg-input__inner {
+    height: map-get($input-heights, mini);
+    line-height: map-get($input-heights, mini);
+  }
+  &--prefix > .pg-input__inner {
+    padding-left: 30px;
+  }
+  &--suffix > .pg-input__inner {
+    padding-right: 30px;
+  }
+  &__unit {
+    @include flexCenter();
+    position: absolute;
+    color: $gray-600;
+    height: 100%;
+    top: 0;
+    left: 58%;
+    transition: 0.3s;
+  }
+  &__inner {
+    -webkit-appearance: none;
+    outline: none;
+    background-color: $white;
+    background-image: none;
+    border-radius: $border-radius;
+    border: 1px solid $border-color;
+    color: $font-color;
+    display: inline-block;
+    font-size: inherit;
+    height: $input-default-height;
+    line-height: $input-default-height;
+    outline: none;
+    padding: 0 15px;
+    transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    width: 100%;
+    &:focus {
+      border-color: $primary;
+      outline-offset: 0px;
+    }
+  }
+  &__suffix,
+  &__prefix {
+    @include flexCenter();
+    position: absolute;
+    top: 0;
+    height: 100%;
+    text-align: center;
+    color: $gray-600;
+    transition: 0.3s;
+  }
+  &__prefix {
+    left: 5px;
+  }
+  &__suffix {
+    right: 5px;
+  }
+  &__icon,
+  :deep(.pg-input__icon) {
+    width: 25px;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &.pg-icon-view {
+      cursor: pointer;
+    }
+  }
+  &.is-hovering {
+    .pg-input__inner {
+      border-color: $gray-500;
+      &:focus {
+        border-color: $primary;
+        outline-offset: 0px;
+      }
+    }
+  }
+  &.is-disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    .pg-input__inner {
+      cursor: not-allowed;
+    }
+  }
+}
+
+.pg-input-group {
+  line-height: normal;
+  display: inline-table;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  &--prepend {
+    .pg-input__inner {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+  &--append {
+    .pg-input__inner {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+  &__prepend,
+  &__append {
+    height: 100%;
+    background-color: $item-backbround-color;
+    color: $font-color;
+    vertical-align: middle;
+    display: table-cell;
+    position: relative;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    padding: 0 20px;
+    width: 1px;
+    white-space: nowrap;
+    :deep(.pg-button) {
+      border: none;
+      margin: -10px -20px;
+      display: inline-block;
+      &:hover {
+        border-color: transparent;
+        background-color: transparent;
+        color: inherit;
+        border-top: 0;
+        border-bottom: 0;
+      }
+    }
+  }
+  &__prepend {
+    border-right: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  &__append {
+    border-left: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}
+
+.pg-textarea {
+  &__inner {
+    display: block;
+    resize: vertical;
+    padding: 5px 15px;
+    line-height: 1.5;
+    height: initial;
+    line-height: initial;
+  }
+}

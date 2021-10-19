@@ -1,0 +1,54 @@
+.pg-select {
+  width: 100%;
+  max-width: 240px;
+  display: inline-block;
+  position: relative;
+  line-height: 40px;
+  cursor: pointer;
+  :deep(.pg-input__inner) {
+    cursor: pointer;
+  }
+  &__caret {
+    transition: .3s;
+    transform: scale(0.7);
+    &.is-reverse {
+      transform: scale(0.7) rotate(180deg);
+    }
+  }
+  &__menu {
+    width: 100%;
+    min-width: 160px;
+    max-height: 300px;
+    position: absolute;
+    background-color: $white;
+    box-shadow: $box-shadow;
+    border-radius: $border-radius;
+    overflow-y: scroll;
+    &--inner {
+      padding: 6px 0;
+    }
+  }
+  &--medium {
+    max-width: 200px;
+    line-height: 36px;
+  }
+  &--small {
+    max-width: 180px;
+    line-height: 30px;
+    :deep(.pg-select__item) {
+      padding: 0 12px;
+    }
+  }
+  &--mini {
+    max-width: 100px;
+    line-height: 24px;
+    :deep(.pg-select__item) {
+      padding: 0 8px;
+    }
+  }
+  &.is-menu-open {
+    :deep(.pg-input__inner) {
+      border-color: rgba($primary, 0.5);
+    }
+  }
+}

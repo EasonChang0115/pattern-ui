@@ -1,0 +1,13 @@
+.pg-menu-item-group {
+  &__title {
+    padding: 7px 0 7px 20px;
+    line-height: normal;
+    font-size: 1rem;
+    color: $gray-600;
+  }
+  ul {
+    :deep(.pg-menu-item) {
+      padding-left: 30px;
+    }
+  }
+}

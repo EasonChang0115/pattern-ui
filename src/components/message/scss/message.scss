@@ -1,0 +1,63 @@
+.pg-message {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  min-width: 375px;
+  max-width: 90%;
+  padding: 13px 20px;
+  box-sizing: content-box;
+  border-radius: $border-radius-lg;
+  font-size: 14px;
+  transition: opacity 0.3s, transform 0.4s, top 0.4s;
+  display: flex;
+  align-items: center;
+  &--close {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    opacity: 0.5;
+    transform: translateY(-50%) scale(0.65);
+    cursor: pointer;
+  }
+  &--center {
+    justify-content: center;
+  }
+  p {
+    margin: 0;
+    line-break: anywhere;
+  }
+  &--success {
+    background-color: lighten($success, 47.5%);
+    border: 1px solid lighten($success, 42%);
+    color: $success;
+  }
+  &--error {
+    background-color: lighten($danger, 47.5%);
+    border: 1px solid lighten($danger, 42%);
+    color: lighten($danger, 12%);
+  }
+  &--warning {
+    background-color: lighten($warning, 47.5%);
+    border: 1px solid lighten($warning, 42%);
+    color: $warning;
+  }
+  &--info {
+    background-color: lighten($gray-600, 47.5%);
+    border: 1px solid lighten($gray-600, 42%);
+    color: $gray-600;
+  }
+
+  &-icon {
+    width: 17px;
+    height: 17px;
+    margin-right: 10px;
+  }
+}
+.pg-message-fade {
+  &-enter-from,
+  &-leave-to {
+    opacity: 0;
+    transform: translate(-50%, -100%);
+  }
+}

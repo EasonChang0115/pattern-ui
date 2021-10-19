@@ -1,0 +1,26 @@
+.pg-menu-item {
+  list-style: none;
+  display: list-item;
+  height: $menu-item-height;
+  line-height: $menu-item-height;
+  text-align: -webkit-match-parent;
+  font-size: 1rem;
+  color: $font-color;
+  padding: 0 20px;
+  cursor: pointer;
+  transition: border-color .3s, background-color .3s, color .3s;
+  white-space: nowrap;
+  :deep([class^="pg-icon-"]) {
+    margin-right: 12px;
+    font-size: 1.2rem;
+    vertical-align: middle;
+  }
+  &.is-active {
+    color: $primary;
+  }
+  &.is-disabled {
+    opacity: 0.25;
+    cursor: not-allowed;
+    background: none !important;
+  }
+}

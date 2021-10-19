@@ -1,0 +1,140 @@
+/*@font-face 設定*/
+@font-face {
+  font-family: "icomoon";
+  src: url("fonts/icomoon.eot");
+  src: url("fonts/icomoon.eot?#iefix") format("embedded-opentype"), url("fonts/icomoon.woff") format("woff"),
+    url("fonts/icomoon.ttf") format("truetype"), url("fonts/icomoon.svg#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="#{$variable-prefix}icon-"],
+[class*=" #{$variable-prefix}icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icomoon" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+$icon-prefix: #{$variable-prefix}icon-;
+
+$icons: (
+  "undo": "\e906",
+  "redo": "\e907",
+  "select": "\e900",
+  "trash": "\e901",
+  "preview-photo": "\e902",
+  "save": "\e903",
+  "search-minus": "\e904",
+  "search-plus": "\e905",
+  "arrow-down": "\e908",
+  "arrow-up": "\e909",
+  "arrow-right": "\e90b",
+  "arrow-left": "\e90a",
+  "side-menu-closet": "\e92a",
+  "side-menu-craft": "\e90c",
+  "side-menu-reference": "\e911",
+  "side-menu-size": "\e912",
+  "side-menu-fabric": "\e90d",
+  "view": "\e90e",
+  "calendar": "\e953",
+  "search": "\e986",
+  "plus": "\ea0a",
+  "minus": "\ea0b",
+  "close": "\e90f",
+  "export": "\e910",
+  "reset": "\e915",
+  "copy": "\e914",
+  "copy2": "\e93f",
+  "delete": "\e913",
+  "anchor": "\e916",
+  "move": "\e917",
+  "taperedpleat": "\e926",
+  "stitching": "\e925",
+  "pipping": "\e924",
+  "nodes": "\e923",
+  "mirror": "\e922",
+  "design": "\e921",
+  "grid": "\e920",
+  "knifepleat": "\e91f",
+  "gathering": "\e91e",
+  "delete-node": "\e91d",
+  "cutting": "\e91b",
+  "adjust": "\e91a",
+  "dart": "\e91c",
+  "add-node": "\e919",
+  "boxpleat": "\e918",
+  "my-design": "\e927",
+  "help": "\e928",
+  "spin-left": "\e92b",
+  "spin-right": "\e92c",
+  "menu": "\e940",
+  // objects
+  "bottom_base": "\e92d",
+  "bottom_elastic": "\e92e",
+  "bottom_high": "\e92f",
+  // pockets
+  "straight_pocket": "\e93e",
+  "splice_pocket": "\e93d",
+  "single_welt_pocket": "\e93c",
+  "patch_pocket": "\e93b",
+  "gusset_pocket": "\e93a",
+  "flap": "\e939",
+  "double_welt_pocket": "\e938",
+  "curved_pocket": "\e937",
+  "box_pocket": "\e936",
+  // fly
+  "visible_zip_fly": "\e935",
+  "visible_zipper": "\e934",
+  "visible_button_fly": "\e933",
+  "mock_fly": "\e932",
+  "invisible_zip_fly": "\e931",
+  "invisible_button_fly": "\e930",
+  // belt
+  "basic_belt": "\e941",
+  "buckle_belt": "\e942",
+  "double_belt": "\e943",
+  "pin_belt": "\e944",
+  // beltloop
+  "i_shaped": "\e945",
+  "shield_shaped": "\e957",
+  "u_shaped": "\e956",
+  "v_shaped": "\e955",
+  "x_shaped": "\e954",
+  // slit
+  "slit": "\e946",
+  // degigns-otehr
+  "cuff": "\e947",
+  "waistband": "\e948",
+  "turn_up_leg_opening": "\e949",
+  // button
+  "snap": "\e94a",
+  "button": "\e952",
+  // zipper
+  "basic_zipper": "\e951",
+  // drawstring
+  "single_drawstring": "\e958",
+  "double_drawstring": "\e95a",
+  // degigns-otehr
+  "rib": "\e94d",
+  "eyelet": "\e94c",
+  "rope": "\e94b",
+  "elasticband": "\e95b",
+  "invisible_zipper": "\e959",
+  "link": "\e95d",
+  "broken-link": "\e95e",
+) !default;
+
+@each $key, $glyph in $icons {
+  .#{$icon-prefix}#{$key}:before {
+    content: $glyph;
+  }
+}

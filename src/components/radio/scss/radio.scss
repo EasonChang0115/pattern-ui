@@ -1,0 +1,129 @@
+@mixin circle($r: 4px) {
+  width: $r;
+  height: $r;
+  border-radius: 100%;
+}
+@mixin disappear($r: 4px) {
+  opacity: 0;
+  outline: none;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0px;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+}
+
+.pg-radio {
+  display: flex;
+  color: $font-color;
+  font-weight: normal;
+  line-height: 1;
+  position: relative;
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 1rem;
+  margin-right: 30px;
+  &.is-disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    .pg-radio__label {
+      opacity: 0.6;
+      color: initial !important;
+      background-color: initial !important;
+      cursor: not-allowed !important;
+    }
+  }
+  &.is-checked {
+    .pg-radio__input {
+      .pg-radio__input--inner {
+        border-color: $primary;
+        background-color: $primary;
+      }
+    }
+  }
+  &--input {
+    @include disappear();
+  }
+  &__input {
+    outline: none;
+    display: inline-block;
+    line-height: 1;
+    white-space: nowrap;
+    position: relative;
+    vertical-align: middle;
+    &--inner {
+      display: inline-block;
+      border: 1px solid $border-color;
+      background-color: #fff;
+      position: relative;
+      @include circle(14px);
+      transition: .3s;
+      &:after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        @include circle(4px);
+        background-color: #fff;
+        transform: translate(-50%, -50%);
+        transition: transform .2s ease-in;
+      }
+    }
+  }
+  &__label {
+    font-size: 1rem;
+    padding-left: 10px;
+  }
+  :last-child {
+    margin-right: 0;
+  }
+}
+
+.pg-radio.is-button {
+  outline: none;
+  margin: 0;
+  &.is-checked {
+    .pg-radio__label {
+      color: $white;
+      background-color: $primary;
+    }
+  }
+  .pg-radio__input {
+    @include disappear();
+  }
+  .pg-radio__label {
+    white-space: nowrap;
+    vertical-align: middle;
+    background: #fff;
+    border: 1px solid $border-color;
+    font-weight: normal;
+    border-left: 0;
+    color: $font-color;
+    text-align: center;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border-radius: 0;
+    margin: 0;
+    cursor: pointer;
+    transition: all .3s cubic-bezier(.645,.045,.355,1);
+    &:hover {
+      color: $white;
+      background-color: darken($primary, 10);
+    }
+  }
+  &:first-child {
+    .pg-radio__label {
+      border-left: 1px solid $border-color;
+      border-radius: 4px 0 0 4px;
+      box-shadow: none !important;
+    }
+  }
+  &:last-child {
+    .pg-radio__label {
+      border-radius: 0 4px 4px 0px;
+      box-shadow: none !important;
+    }
+  }
+}

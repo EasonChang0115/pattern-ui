@@ -1,0 +1,35 @@
+.pg-checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  &.size-medium {
+    :deep(.pg-checkbox) {
+      &.is-button {
+        .pg-checkbox__label {
+          padding: 10px 20px;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+  &.size-small {
+    :deep(.pg-checkbox) {
+      &.is-button {
+        .pg-checkbox__label {
+          padding: 9px 15px;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+  &.size-mini {
+    :deep(.pg-checkbox) {
+      &.is-button {
+        .pg-checkbox__label {
+          padding: 7px 15px;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}

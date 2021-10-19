@@ -1,0 +1,31 @@
+
+@import '~pattern-scss/normalize.scss';
+@import '~pattern-scss/functions';
+@import '~pattern-scss/variables';
+@import '~pattern-scss/root.scss';
+@import '~pattern-scss/animation.scss';
+@import '~pattern-scss/pattern-grid.scss';
+@import '~pattern-scss/tables.scss';
+@import "~pattern-scss/utilities";
+@import "~pattern-scss/utilities/api";
+
+
+@import 'icon.scss';
+
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+body, html {
+  font-size: 14px;
+  font-family: $font-family-sans-serif;
+}
+
+// 工具初始化
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+

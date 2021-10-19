@@ -1,0 +1,24 @@
+.pg-select__item {
+  @include text-truncate();
+  font-size: 1rem;
+  padding: 0 20px;
+  position: relative;
+  color: $font-color;
+  height: 34px;
+  line-height: 34px;
+  cursor: pointer;
+  transition: .3s;
+  &.is-disabled {
+    cursor: not-allowed;
+    color: $gray-500;
+    &:hover {
+      background-color: initial;
+    }
+  }
+  &.selected {
+    color: $primary;
+  }
+  &:hover {
+    background-color: $gray-200;
+  }
+}

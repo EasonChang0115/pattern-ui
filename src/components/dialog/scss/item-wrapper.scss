@@ -1,0 +1,33 @@
+.pg-dialog{
+  &__item--wrapper {
+    font-size: 1rem;
+    padding-top: 20px;
+    .pg-dialog-item__label {
+      width: 100%;
+      text-align: left;
+      vertical-align: middle;
+      float: left;
+      color: #606266;
+      padding: 0 0;
+      margin-bottom: 18px;
+      font-size: 1rem;
+    }
+    .pg-dialog-item__content {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      :deep(.pg-input) {
+        .pg-input__inner {
+          height: 32px;
+          line-height: 32px;
+        }
+      }
+      :deep(.pg-input-number) {
+        .pg-input-number__increase,
+        .pg-input-number__decrease {
+          line-height: 30px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,61 @@
+.pg-dialog {
+  position: relative;
+  &__alert {
+    width: 100%;
+  }
+  &__alert__content {
+    padding-top: 1rem;
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-bottom: 8px;
+    .html {
+      position: relative;
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, 0);
+        width: 100%;
+        height: 1px;
+        background-color: #666;
+      }
+      margin-top: 15px;
+      padding: 8px;
+    }
+    .icon {
+      width: 100%;
+      position: relative;
+      margin-bottom: 1rem;
+      @include flexCenter();
+      img {
+        width: 75px;
+        height: 75px;
+      }
+    }
+    .text {
+      text-align: center;
+      font-size: 1.2rem;
+    }
+  }
+  &__alert__footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 8px 15px;
+    :deep(button) {
+      width: 100%;
+      font-size: 1rem;
+    }
+    &.confirm {
+      justify-content: space-around;
+      :deep(button) {
+        margin-right: 8px;
+        font-size: 1rem;
+        &:last-child {
+          margin: 0;
+        }
+      }
+    }
+  }
+}

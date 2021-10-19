@@ -1,0 +1,25 @@
+.pg-desgin-selector {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px 0;
+  .pg-select__menu {
+    min-width: initial;
+    width: 100%;
+    box-shadow: 0 3px 9px 0 rgba(black, 0.11);
+  }
+  :deep(.pg-input) {
+    background-color: $gray;
+    input {
+      height: 25px;
+      border-radius: $design-border-radius;
+      background-color: $gray;
+      outline: none;
+      &:focus {
+        border-color: #dee2e6;
+        outline-offset: 0px
+      }
+    }
+  }
+}

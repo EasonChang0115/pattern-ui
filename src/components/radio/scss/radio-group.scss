@@ -1,0 +1,35 @@
+.pg-radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  &.size-medium {
+    :deep(.pg-radio) {
+      &.is-button {
+        .pg-radio__label {
+          padding: 10px 20px;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+  &.size-small {
+    :deep(.pg-radio) {
+      &.is-button {
+        .pg-radio__label {
+          padding: 9px 15px;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+  &.size-mini {
+    :deep(.pg-radio) {
+      &.is-button {
+        .pg-radio__label {
+          padding: 7px 15px;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
