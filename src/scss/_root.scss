@@ -1,0 +1,18 @@
+// css modules 新增參數全域化
+
+:root {
+  // 根據 variable 裡的設定把 顏色全域
+  @each $color, $value in $colors {
+    --#{$variable-prefix}#{$color}: #{$value};
+  }
+
+  // 根據 variable 裡的設定把 主題顏色全域
+  @each $color, $value in $theme-colors {
+    --#{$variable-prefix}#{$color}: #{$value};
+  }
+
+  // 常用的字體跟漸變也設為 全域變數
+  --#{$variable-prefix}font-sans-serif: #{inspect($font-family-sans-serif)};
+  --#{$variable-prefix}font-monospace: #{inspect($font-family-monospace)};
+  --#{$variable-prefix}gradient: #{$gradient};
+}

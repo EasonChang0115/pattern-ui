@@ -1,22 +1,24 @@
+@import "normalize.scss";
+@import "functions";
+@import "variables";
+@import "root.scss";
+@import "animation.scss";
+@import "pattern-grid.scss";
+@import "tables.scss";
 
-@import '~pattern-scss/normalize.scss';
-@import '~pattern-scss/functions';
-@import '~pattern-scss/variables';
-@import '~pattern-scss/root.scss';
-@import '~pattern-scss/animation.scss';
-@import '~pattern-scss/pattern-grid.scss';
-@import '~pattern-scss/tables.scss';
-@import "~pattern-scss/utilities";
-@import "~pattern-scss/utilities/api";
+@import "utilities";
+@import "utilities/api";
 
+@import "icon.scss";
 
-@import 'icon.scss';
-
-*, *::after, *::before {
+*,
+*::after,
+*::before {
   box-sizing: border-box;
 }
 
-body, html {
+body,
+html {
   font-size: 14px;
   font-family: $font-family-sans-serif;
 }
@@ -27,5 +29,3 @@ ul {
   margin: 0;
   padding: 0;
 }
-
-

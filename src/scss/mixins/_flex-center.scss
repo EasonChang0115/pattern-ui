@@ -1,0 +1,19 @@
+@mixin position($position, $T: null, $R: null, $B: null, $L: null) {
+  position: $position;
+  top: $T;
+  right: $R;
+  bottom: $B;
+  left: $L;
+}
+
+@mixin flexCenter() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// 居中
+@mixin toCenter() {
+  @include position(absolute, $T:50%, $L:50%);
+  transform: translate(-50%, -50%);
+}
