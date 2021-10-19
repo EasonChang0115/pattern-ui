@@ -89,7 +89,7 @@ const routes = [
 ];
 
 const router = createRouter({
-  history: createWebHistory('/demo/'),
+  history: createWebHistory('/pattern-ui/demo/'),
   routes,
   scrollBehavior: () => ({ x: 0, y: 0 })
 });
