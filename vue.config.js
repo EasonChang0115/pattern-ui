@@ -1,5 +1,5 @@
 module.exports = {
-  publicPath: process.env.NODE_ENV === 'production' ? '/demo/' : '/',
+  publicPath: process.env.NODE_ENV === 'production' ? '/pattern-ui/demo/' : '/',
   css: {
     loaderOptions: {
       scss: {
@@ -10,11 +10,11 @@ module.exports = {
           @import "@/scss/mixins/_clearfix.scss";
           @import "@/scss/mixins/_breakpoints.scss";
           @import "@/scss/mixins/_triangle.scss";
-        `,
-      },
-    },
+        `
+      }
+    }
   },
-  chainWebpack: (config) => {
+  chainWebpack: config => {
     // 壓縮圖片
     config.module
       .rule('images')
@@ -23,18 +23,18 @@ module.exports = {
       .options({
         mozjpeg: {
           progressive: true,
-          quality: 65,
+          quality: 65
         },
         optipng: {
-          enabled: false,
+          enabled: false
         },
         pngquant: {
           quality: [0.1, 0.5],
-          speed: 4,
+          speed: 4
         },
         gifsicle: {
-          interlaced: false,
-        },
+          interlaced: false
+        }
         // webp: { quality: 75 }
       });
   },
@@ -45,7 +45,7 @@ module.exports = {
       maxAssetSize: 30000000,
       assetFilter(assetFilename) {
         return assetFilename.endsWith('.js');
-      },
-    },
-  },
+      }
+    }
+  }
 };
