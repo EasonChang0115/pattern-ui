@@ -1,2 +1,2 @@
-(window.webpackJsonp = window.webpackJsonp || []).push([['chunk-2d0f0804'], { '9d47'(n, t, e) { 'use strict'; e.r(t); var c = e('7a23'); const r = { class: 'pattern_ui_home' }; function s(n, t, e, s, u, o) { return Object(c.E)(), Object(c.i)('div', r, ' 介紹與使用 - 版騰信息 '); } var u = { setup() { return {}; } }; var o = e('6b0d'); var a = e.n(o); const d = a()(u, [['render', s]]); t.default = d; } }]);
-// # sourceMappingURL=chunk-2d0f0804.8074ae89.js.map
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0f0804"],{"9d47":function(n,t,e){"use strict";e.r(t);var c=e("7a23");const r={class:"pattern_ui_home"};function s(n,t,e,s,u,o){return Object(c["E"])(),Object(c["i"])("div",r," 介紹與使用 - 版騰信息 ")}var u={setup(){return{}}},o=e("6b0d"),a=e.n(o);const d=a()(u,[["render",s]]);t["default"]=d}}]);
+//# sourceMappingURL=chunk-2d0f0804.8074ae89.js.map
